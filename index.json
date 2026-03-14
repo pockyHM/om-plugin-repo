@@ -1,0 +1,51 @@
+{
+  "version": "1",
+  "updated_at": "2026-03-14T13:25:00Z",
+  "plugins": [
+    {
+      "name": "om-node-monitor",
+      "version": "1.0.0",
+      "display_name": "Node Monitor",
+      "description": "Full-stack host monitoring plugin: CPU/memory/disk/network metrics (node-exporter compatible), kernel crash detection via /dev/kmsg (dmesg), SSH login auditing with brute-force detection, and system info labels.",
+      "author": "openmanager",
+      "logo_url": "https://raw.githubusercontent.com/pockyHM/om-plugin-repo/main/om-node-monitor/logo.svg",
+      "homepage": "https://github.com/pockyHM/om-plugin-repo",
+      "min_agent_version": "0.1.0",
+      "message_types": ["metric", "alert", "event", "issue", "error", "labels"],
+      "skills": ["linux-ops"],
+      "tags": ["monitoring", "system", "cpu", "memory", "disk", "network", "ssh", "dmesg", "security"],
+      "platforms": [
+        {
+          "os": "linux",
+          "arch": "amd64",
+          "download_url": "https://raw.githubusercontent.com/pockyHM/om-plugin-repo/main/releases/om-node-monitor-linux-amd64-1.0.0.zip",
+          "sha256": "77a1e2425e686b6ad50121748192d933a02afadd6a161ac697e96eeb07096339"
+        },
+        {
+          "os": "linux",
+          "arch": "arm64",
+          "download_url": "https://raw.githubusercontent.com/pockyHM/om-plugin-repo/main/releases/om-node-monitor-linux-arm64-1.0.0.zip",
+          "sha256": "27874f47fadcc24825dabf1b321e0e5621f3a3e2c4f44487056cbd0025a0ac7c"
+        },
+        {
+          "os": "darwin",
+          "arch": "amd64",
+          "download_url": "https://raw.githubusercontent.com/pockyHM/om-plugin-repo/main/releases/om-node-monitor-darwin-amd64-1.0.0.zip",
+          "sha256": "545e838ee449e98ee660a9181906fba127bad07483f290e6ab1b5ef9b3d5bb0e"
+        },
+        {
+          "os": "darwin",
+          "arch": "arm64",
+          "download_url": "https://raw.githubusercontent.com/pockyHM/om-plugin-repo/main/releases/om-node-monitor-darwin-arm64-1.0.0.zip",
+          "sha256": "43e1121f930a3f687d44028161864d258e6dd4c92af268da88d5b54cd367e3e9"
+        },
+        {
+          "os": "windows",
+          "arch": "amd64",
+          "download_url": "https://raw.githubusercontent.com/pockyHM/om-plugin-repo/main/releases/om-node-monitor-windows-amd64-1.0.0.zip",
+          "sha256": "cff8d6a9180cd2815a403842895c41d48e3f6d3e46577308fffb19ebc96c5a8d"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+# compiled binaries (raw, before packaging)
+releases/om-node-monitor-linux-amd64
+releases/om-node-monitor-linux-arm64
+releases/om-node-monitor-darwin-amd64
+releases/om-node-monitor-darwin-arm64
+releases/om-node-monitor-windows-amd64.exe
+
+# local dev binary
+om-node-monitor/om-node-monitor.exe
+om-node-monitor/om-node-monitor
+
+# editor / OS
+.DS_Store
+Thumbs.db
+*.swp

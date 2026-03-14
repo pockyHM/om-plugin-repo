@@ -1,0 +1,14 @@
+{
+  "name": "om-node-monitor",
+  "version": "1.0.0",
+  "display_name": "Node Monitor",
+  "description": "Full-stack host monitoring: CPU/memory/disk/network metrics, kernel crash detection via dmesg, SSH login auditing, and system info labels.",
+  "author": "openmanager",
+  "logo": "logo.svg",
+  "min_agent_version": "0.1.0",
+  "os": ["linux", "darwin"],
+  "arch": ["amd64", "arm64"],
+  "message_types": ["metric", "alert", "event", "issue", "error", "labels"],
+  "skills": ["linux-ops"],
+  "tags": ["monitoring", "system", "cpu", "memory", "disk", "network", "ssh", "dmesg", "security"]
+}

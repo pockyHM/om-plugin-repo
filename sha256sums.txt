@@ -1,0 +1,5 @@
+545e838ee449e98ee660a9181906fba127bad07483f290e6ab1b5ef9b3d5bb0e *om-node-monitor-darwin-amd64-1.0.0.zip
+43e1121f930a3f687d44028161864d258e6dd4c92af268da88d5b54cd367e3e9 *om-node-monitor-darwin-arm64-1.0.0.zip
+77a1e2425e686b6ad50121748192d933a02afadd6a161ac697e96eeb07096339 *om-node-monitor-linux-amd64-1.0.0.zip
+27874f47fadcc24825dabf1b321e0e5621f3a3e2c4f44487056cbd0025a0ac7c *om-node-monitor-linux-arm64-1.0.0.zip
+cff8d6a9180cd2815a403842895c41d48e3f6d3e46577308fffb19ebc96c5a8d *om-node-monitor-windows-amd64-1.0.0.zip
