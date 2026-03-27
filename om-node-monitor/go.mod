@@ -2,7 +2,10 @@ module om-node-monitor
 
 go 1.21
 
-require github.com/shirou/gopsutil/v3 v3.24.5
+require (
+	github.com/shirou/gopsutil/v3 v3.24.5
+	gopkg.in/yaml.v3 v3.0.1
+)
 
 require (
 	github.com/go-ole/go-ole v1.3.0 // indirect

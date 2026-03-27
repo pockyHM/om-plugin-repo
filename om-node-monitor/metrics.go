@@ -12,16 +12,7 @@ import (
 	psnet "github.com/shirou/gopsutil/v3/net"
 )
 
-// Threshold constants (percent).
-const (
-	cpuCritThreshold  = 90.0
-	cpuWarnThreshold  = 80.0
-	memCritThreshold  = 90.0
-	memWarnThreshold  = 80.0
-	diskCritThreshold = 90.0
-	diskWarnThreshold = 80.0
-	swapWarnThreshold = 70.0
-)
+const swapWarnThreshold = 70.0
 
 // Pseudo-filesystem types to skip when reporting disk usage.
 var skipFsTypes = map[string]bool{
@@ -60,15 +51,15 @@ func collectCPU() {
 		})
 
 		switch {
-		case total >= cpuCritThreshold && canAlert("cpu_crit"):
+		case total >= config.CPUCritThreshold && canAlert("cpu_crit"):
 			emitAlert(
-				fmt.Sprintf("CPU usage %.1f%% exceeds critical threshold %.0f%%", total, cpuCritThreshold),
+				fmt.Sprintf("CPU usage %.1f%% exceeds critical threshold %.0f%%", total, config.CPUCritThreshold),
 				map[string]string{"severity": "critical", "metric": "cpu_usage_percent"},
 				fmt.Sprintf("cpu-high-%d", time.Now().Unix()),
 			)
-		case total >= cpuWarnThreshold && canAlert("cpu_warn"):
+		case total >= config.CPUWarnThreshold && canAlert("cpu_warn"):
 			emitAlert(
-				fmt.Sprintf("CPU usage %.1f%% exceeds warning threshold %.0f%%", total, cpuWarnThreshold),
+				fmt.Sprintf("CPU usage %.1f%% exceeds warning threshold %.0f%%", total, config.CPUWarnThreshold),
 				map[string]string{"severity": "warning", "metric": "cpu_usage_percent"},
 				"",
 			)
@@ -104,15 +95,15 @@ func collectMemory() {
 	emitMetric(vm.UsedPercent, map[string]string{"metric_name": "mem_used_percent", "unit": "percent"})
 
 	switch {
-	case vm.UsedPercent >= memCritThreshold && canAlert("mem_crit"):
+	case vm.UsedPercent >= config.MemoryCritThreshold && canAlert("mem_crit"):
 		emitAlert(
-			fmt.Sprintf("Memory usage %.1f%% exceeds critical threshold %.0f%%", vm.UsedPercent, memCritThreshold),
+			fmt.Sprintf("Memory usage %.1f%% exceeds critical threshold %.0f%%", vm.UsedPercent, config.MemoryCritThreshold),
 			map[string]string{"severity": "critical", "metric": "mem_used_percent"},
 			fmt.Sprintf("mem-high-%d", time.Now().Unix()),
 		)
-	case vm.UsedPercent >= memWarnThreshold && canAlert("mem_warn"):
+	case vm.UsedPercent >= config.MemoryWarnThreshold && canAlert("mem_warn"):
 		emitAlert(
-			fmt.Sprintf("Memory usage %.1f%% exceeds warning threshold %.0f%%", vm.UsedPercent, memWarnThreshold),
+			fmt.Sprintf("Memory usage %.1f%% exceeds warning threshold %.0f%%", vm.UsedPercent, config.MemoryWarnThreshold),
 			map[string]string{"severity": "warning", "metric": "mem_used_percent"},
 			"",
 		)
@@ -183,17 +174,17 @@ func collectDisk() {
 
 		alertKey := "disk_" + strings.ReplaceAll(p.Mountpoint, "/", "_")
 		switch {
-		case usage.UsedPercent >= diskCritThreshold && canAlert(alertKey+"_crit"):
+		case usage.UsedPercent >= config.DiskCritThreshold && canAlert(alertKey+"_crit"):
 			emitAlert(
 				fmt.Sprintf("Disk %s usage %.1f%% exceeds critical threshold %.0f%%",
-					p.Mountpoint, usage.UsedPercent, diskCritThreshold),
+					p.Mountpoint, usage.UsedPercent, config.DiskCritThreshold),
 				mergeMaps(baseLabels, map[string]string{"severity": "critical"}),
 				fmt.Sprintf("disk-high%s-%d", strings.ReplaceAll(p.Mountpoint, "/", "-"), time.Now().Unix()),
 			)
-		case usage.UsedPercent >= diskWarnThreshold && canAlert(alertKey+"_warn"):
+		case usage.UsedPercent >= config.DiskWarnThreshold && canAlert(alertKey+"_warn"):
 			emitAlert(
 				fmt.Sprintf("Disk %s usage %.1f%% exceeds warning threshold %.0f%%",
-					p.Mountpoint, usage.UsedPercent, diskWarnThreshold),
+					p.Mountpoint, usage.UsedPercent, config.DiskWarnThreshold),
 				mergeMaps(baseLabels, map[string]string{"severity": "warning"}),
 				"",
 			)

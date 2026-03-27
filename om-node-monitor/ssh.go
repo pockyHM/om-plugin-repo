@@ -31,11 +31,6 @@ var (
 	bfCounts = make(map[string]*bfTracker)
 )
 
-const (
-	bfThreshold = 10              // failed attempts to trigger brute-force alert
-	bfWindow    = 5 * time.Minute // rolling window
-)
-
 type bfTracker struct {
 	count int
 	since time.Time
@@ -47,13 +42,14 @@ func trackFailedLogin(ip string) bool {
 	bfMu.Lock()
 	defer bfMu.Unlock()
 
+	bfWindow := time.Duration(config.SSHBruteForceWindow) * time.Second
 	t, ok := bfCounts[ip]
 	if !ok || time.Since(t.since) > bfWindow {
 		bfCounts[ip] = &bfTracker{count: 1, since: time.Now()}
 		return false
 	}
 	t.count++
-	return t.count >= bfThreshold
+	return t.count >= config.SSHBruteForceThreshold
 }
 
 // watchSSH finds the best log source and tails it for SSH events.
@@ -224,7 +220,7 @@ func processAuthLine(line string) {
 		brute := trackFailedLogin(ip)
 		if brute && canAlert("ssh_brute_"+ip) {
 			emitAlert(
-				fmt.Sprintf("SSH brute-force detected: %d+ failed logins from %s", bfThreshold, ip),
+				fmt.Sprintf("SSH brute-force detected: %d+ failed logins from %s", config.SSHBruteForceThreshold, ip),
 				map[string]string{
 					"severity": "critical",
 					"src_ip":   ip,

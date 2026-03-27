@@ -1,0 +1,51 @@
+config:
+  - name: metrics_interval
+    type: int
+    description: "Metrics collection interval in seconds"
+    required: false
+    default: 15
+  - name: labels_interval
+    type: int
+    description: "System labels collection interval in seconds"
+    required: false
+    default: 300
+  - name: cpu_warn_threshold
+    type: float
+    description: "CPU usage warning threshold (0-100)"
+    required: false
+    default: 80.0
+  - name: cpu_crit_threshold
+    type: float
+    description: "CPU usage critical threshold (0-100)"
+    required: false
+    default: 90.0
+  - name: memory_warn_threshold
+    type: float
+    description: "Memory usage warning threshold (0-100)"
+    required: false
+    default: 80.0
+  - name: memory_crit_threshold
+    type: float
+    description: "Memory usage critical threshold (0-100)"
+    required: false
+    default: 90.0
+  - name: disk_warn_threshold
+    type: float
+    description: "Disk usage warning threshold (0-100)"
+    required: false
+    default: 80.0
+  - name: disk_crit_threshold
+    type: float
+    description: "Disk usage critical threshold (0-100)"
+    required: false
+    default: 90.0
+  - name: ssh_brute_force_threshold
+    type: int
+    description: "SSH failed login attempts threshold for brute-force detection"
+    required: false
+    default: 10
+  - name: ssh_brute_force_window
+    type: int
+    description: "SSH brute-force detection time window in seconds"
+    required: false
+    default: 300
