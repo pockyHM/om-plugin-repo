@@ -19,31 +19,31 @@
           "os": "linux",
           "arch": "amd64",
           "download_url": "https://raw.githubusercontent.com/pockyHM/om-plugin-repo/main/releases/om-node-monitor-linux-amd64-1.0.0.zip",
-          "sha256": "a1f1d32b64c90d7ca24cf247110492a3da7e032a3989f9bddd04154531c4d225"
+          "sha256": "7cd463be9f1e5fd79e44af4ae3548b19a93968e93ec8e0900e53a9d54b40c8a3"
         },
         {
           "os": "linux",
           "arch": "arm64",
           "download_url": "https://raw.githubusercontent.com/pockyHM/om-plugin-repo/main/releases/om-node-monitor-linux-arm64-1.0.0.zip",
-          "sha256": "380d21d59d5b4f3082af83d8852366ab2b7dade6daf1cb802d98ef2ecaf4b873"
+          "sha256": "8fdf6ac8e7f95a596cace2efd75b1d73c54ad15bbf11af4199556bd8c5ec97e5"
         },
         {
           "os": "darwin",
           "arch": "amd64",
           "download_url": "https://raw.githubusercontent.com/pockyHM/om-plugin-repo/main/releases/om-node-monitor-darwin-amd64-1.0.0.zip",
-          "sha256": "1cb52056ca31df96b303bd9194c70581a4403ca2a29aa55a850759b7568a9061"
+          "sha256": "a244a9a39e7065e9e7b520a2281c9d1de60aaec513e6f5d516de2072838f3bfb"
         },
         {
           "os": "darwin",
           "arch": "arm64",
           "download_url": "https://raw.githubusercontent.com/pockyHM/om-plugin-repo/main/releases/om-node-monitor-darwin-arm64-1.0.0.zip",
-          "sha256": "646bb5eb35836bf1fa23c30844b6a397092070a60eb966f07a27cbfdce9714cb"
+          "sha256": "783ce9df285fbd3700268e559d6f5eff6e87e267a93d74d32d679a141892e67f"
         },
         {
           "os": "windows",
           "arch": "amd64",
           "download_url": "https://raw.githubusercontent.com/pockyHM/om-plugin-repo/main/releases/om-node-monitor-windows-amd64-1.0.0.zip",
-          "sha256": "f0c05c2769100b55e25cc6869e98fb04e6c4560ce6cadb3a02a680ce943c7a00"
+          "sha256": "691ab4aaf4d47995892e6fc94ad0efba20399a725186f96b0647ef244a4e5411"
         }
       ]
     }

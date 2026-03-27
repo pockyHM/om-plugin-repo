@@ -33,7 +33,7 @@ func loadConfig() *Config {
 		SSHBruteForceWindow:     300,
 	}
 
-	data, err := os.ReadFile("config.yaml")
+	data, err := os.ReadFile("config-values.yaml")
 	if err != nil {
 		return cfg
 	}
