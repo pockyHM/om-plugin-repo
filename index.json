@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "updated_at": "2026-03-14T13:25:00Z",
+  "updated_at": "2026-03-27T01:35:00Z",
   "plugins": [
     {
       "name": "om-node-monitor",
@@ -19,31 +19,31 @@
           "os": "linux",
           "arch": "amd64",
           "download_url": "https://raw.githubusercontent.com/pockyHM/om-plugin-repo/main/releases/om-node-monitor-linux-amd64-1.0.0.zip",
-          "sha256": "77a1e2425e686b6ad50121748192d933a02afadd6a161ac697e96eeb07096339"
+          "sha256": "53377d498dda80a5b46b3174c4c017ef2bc0c8bf2d1a7fe4e400114c42d19c46"
         },
         {
           "os": "linux",
           "arch": "arm64",
           "download_url": "https://raw.githubusercontent.com/pockyHM/om-plugin-repo/main/releases/om-node-monitor-linux-arm64-1.0.0.zip",
-          "sha256": "27874f47fadcc24825dabf1b321e0e5621f3a3e2c4f44487056cbd0025a0ac7c"
+          "sha256": "faa3ed598bbef52c07d49e39769b030df3eb8fb5b6d6a41f8732187f07f7be05"
         },
         {
           "os": "darwin",
           "arch": "amd64",
           "download_url": "https://raw.githubusercontent.com/pockyHM/om-plugin-repo/main/releases/om-node-monitor-darwin-amd64-1.0.0.zip",
-          "sha256": "545e838ee449e98ee660a9181906fba127bad07483f290e6ab1b5ef9b3d5bb0e"
+          "sha256": "265aac574aa5a1e441c9c2421541816ff42e92b0fa130d2b498f5c96a20d1316"
         },
         {
           "os": "darwin",
           "arch": "arm64",
           "download_url": "https://raw.githubusercontent.com/pockyHM/om-plugin-repo/main/releases/om-node-monitor-darwin-arm64-1.0.0.zip",
-          "sha256": "43e1121f930a3f687d44028161864d258e6dd4c92af268da88d5b54cd367e3e9"
+          "sha256": "da93b13f7e79febdbfff8678215d9599d2988c8c43bc237d45fc4ae57730c7a9"
         },
         {
           "os": "windows",
           "arch": "amd64",
           "download_url": "https://raw.githubusercontent.com/pockyHM/om-plugin-repo/main/releases/om-node-monitor-windows-amd64-1.0.0.zip",
-          "sha256": "cff8d6a9180cd2815a403842895c41d48e3f6d3e46577308fffb19ebc96c5a8d"
+          "sha256": "06dff4f720a5303b1ec2d5176e2b11db35c86604382a230912789ac730e1960e"
         }
       ]
     }
